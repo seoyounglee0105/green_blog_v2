@@ -1,5 +1,5 @@
 server:
-  port: 8080  # 이유가 있으니까 8080으로 쓰기
+  port: 8080
   servlet: 
     context-path: /
     
@@ -16,7 +16,7 @@ spring:
   jpa:
     open-in-view: true # 영속성 컨텍스트와 관련된 속성
     hibernate:
-      ddl-auto: create # update / create  -> create하면 항상 테이블 drop하고 새로 만듦
+      ddl-auto: update # update / create  -> create하면 항상 테이블 drop하고 새로 만듦
       naming: # 둘 중 하나 선택
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl # 스네이크 표기법으로 테이블 생성
         # physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl # model에서 작성한 대로 표기법을 사용해서 컬럼이 만들어짐

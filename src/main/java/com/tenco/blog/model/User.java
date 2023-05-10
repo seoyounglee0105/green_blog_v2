@@ -11,10 +11,13 @@ import javax.persistence.Id;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
-// 도메인 객체라고도 부름
+import lombok.Data;
+
+
 
 // 자동으로 해당 멤버변수들을 컬럼으로 갖는 CREATE문을 실행해줌
-@Entity
+@Entity // 도메인 객체라고도 부름 : 테이블 역할 // DTO 역할도 함
+@Data // 주의 : (Object Mapper가) 파싱 처리할 때 setter 메서드가 반드시 있어야 함
 public class User {
 
 	@Id
