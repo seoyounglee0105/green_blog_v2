@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
@@ -26,8 +27,12 @@ public class User {
 	          // NOT NULL      // 길이 제한
 	@Column(nullable = false, length = 30)
 	private String username;
+	
+	@NotBlank // null, "" 불가능
 	@Column(nullable = false, length = 100)
 	private String password;
+	
+	@NotBlank // null, "" 불가능
 	@Column(nullable = false, length = 50)
 	private String email;
 	

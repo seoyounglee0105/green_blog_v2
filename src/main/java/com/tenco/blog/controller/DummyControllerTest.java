@@ -1,14 +1,13 @@
 package com.tenco.blog.controller;
 
 import java.util.List;
-import java.util.Optional;
-
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,13 +32,14 @@ public class DummyControllerTest {
 	// 회원 등록 - 샘플
 	// 매핑 엔드포인트랑 메서드 이름을 약간 맞춰주기 
 	@PostMapping("/dummy/insert-user")
-	public String insertUser(@RequestBody User user) {
+	public String insertUser(@Validated @RequestBody User user) {
 		// 유효성 검사 생략
 		System.out.println(user.toString());
 		
 		user.setRole("user");
 		// insert
 		userRepository.save(user);
+		System.out.println("여기 코드 동작하나요?");
 		
 		return "회원가입 성공";
 	}
@@ -100,7 +100,7 @@ public class DummyControllerTest {
 	//                 2번 방식 : dirty checking 사용 (영속성 컨텍스트가 있어서 가능함)
 	@Transactional
 	@PutMapping("/dummy/user/{id}")
-	public User updateUser(@PathVariable Integer id, @RequestBody User reqUser) {
+	public User updateUser(@PathVariable Integer id, @Validated @RequestBody User reqUser) {
 		
 		// 인증 검사, 유효성 검사 
 		
