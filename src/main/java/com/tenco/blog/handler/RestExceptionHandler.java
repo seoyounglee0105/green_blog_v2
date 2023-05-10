@@ -1,4 +1,4 @@
-package com.tenco.blog.Handler;
+package com.tenco.blog.handler;
 
 import java.util.ArrayList;
 import java.util.List;

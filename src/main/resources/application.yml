@@ -2,6 +2,9 @@ server:
   port: 8080
   servlet: 
     context-path: /
+    encoding:
+      charset: utf-8 # 인코딩 표준
+      force: true
 
 spring: 
   devtools:
