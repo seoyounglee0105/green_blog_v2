@@ -2,14 +2,8 @@ server:
   port: 8080
   servlet: 
     context-path: /
-    encoding:
-      charset: utf-8 # 인코딩 표준
-      force: true
 
 spring: 
-  devtools:
-    livereload:
-      enabled: true  
   mvc:
     view: # JSP 사용 설정
       prefix: /WEB-INF/view # jsp 파일 경로

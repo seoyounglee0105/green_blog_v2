@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +11,11 @@
 </head>
 <body>
 	<div class="container">
-		<h1>form Å×½ºÆ®</h1>
+		<h1>form í…ŒìŠ¤íŠ¸</h1>
 		<form action="/temp/join2" method="post">
 			<div class="form-group">
 				<label for="username">username : </label>
-				<input type="text" id="username" name="username" class="form-control" value="Ç×1">
+				<input type="text" id="username" name="username" class="form-control" value="í•­1">
 			</div>
 			<div class="form-group">
 				<label for="password">password : </label>
@@ -27,9 +26,9 @@
 				<input type="text" id="email" name="email" class="form-control" value="os01031@naver.com">
 			</div>
 		</form>
-			<button class="btn btn-primary" id="join--submit">È¸¿ø°¡ÀÔ</button>
-			<button class="btn btn-primary" id="update--submit">È¸¿øÁ¤º¸¼öÁ¤</button>
-			<button class="btn btn-primary" id="delete--submit">È¸¿øÅ»Åğ</button>
+			<button class="btn btn-primary" id="join--submit">íšŒì›ê°€ì…</button>
+			<button class="btn btn-primary" id="update--submit">íšŒì›ì •ë³´ìˆ˜ì •</button>
+			<button class="btn btn-primary" id="delete--submit">íšŒì›íƒˆí‡´</button>
 	</div>
 	
 	<script type="text/javascript">
@@ -47,10 +46,10 @@
 					dataType: 'json'
 					
 				}).done((response) => {
-					alert("Åë½Å ¼º°ø");
+					alert("í†µì‹  ì„±ê³µ");
 					
 				}).fail((error) => {
-					alert("Åë½Å ½ÇÆĞ");
+					alert("í†µì‹  ì‹¤íŒ¨");
 					
 				});
 			});
@@ -62,10 +61,10 @@
 					contentType: 'application/json; charset=utf-8'
 					
 				}).done((response) => {
-					alert("Åë½Å ¼º°ø");
+					alert("í†µì‹  ì„±ê³µ");
 					
 				}).fail((error) => {
-					alert("Åë½Å ½ÇÆĞ");
+					alert("í†µì‹  ì‹¤íŒ¨");
 					
 				});
 			});
@@ -82,30 +81,30 @@
 			
 			$("#join--submit").on("click", () => {
 				// MIME TYPE : application/json
-				// js --> json ¹®ÀÚ¿­·Î º¯°æÇÏ´Â ·ÎÁ÷
-				// :: object --> JSON ¹®ÀÚ¿­·Î º¯°æ
+				// js --> json ë¬¸ìì—´ë¡œ ë³€ê²½í•˜ëŠ” ë¡œì§
+				// :: object --> JSON ë¬¸ìì—´ë¡œ ë³€ê²½
 				let data = {
 						username : $("#username").val(),
 						password : $("#password").val(),
 						email : $("#email").val()
 				};
-				console.log(JSON.stringify(data)); // JSON ¹®ÀÚ¿­·Î º¯È¯µÊ
+				console.log(JSON.stringify(data)); // JSON ë¬¸ìì—´ë¡œ ë³€í™˜ë¨
 				
 				$.ajax({
 					type: 'POST',
 					url: '/temp/join2',
 					contentType: 'application/json; charset=utf-8',
-					data: JSON.stringify(data), // body¿¡ ³ÖÀ» °ª 
+					data: JSON.stringify(data), // bodyì— ë„£ì„ ê°’ 
 					dataType: 'json'
 					
 				}).done(function(response) {
 					console.log(response);
 					console.log(typeof response);
-					alert("Åë½Å ¼º°ø");
+					alert("í†µì‹  ì„±ê³µ");
 					location.href = "/temp/index";
 					
 				}).fail(function(error) {
-					alert("Åë½Å ½ÇÆĞ");
+					alert("í†µì‹  ì‹¤íŒ¨");
 					
 				});
 				

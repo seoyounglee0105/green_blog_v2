@@ -1,4 +1,4 @@
-package com.tenco.blog.controller;
+package com.tenco.blog.test_controller;
 
 import javax.transaction.Transactional;
 
