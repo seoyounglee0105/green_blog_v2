@@ -4,7 +4,7 @@
 	<h1>여기는 회원가입 화면</h1>
 	
 		<div class="container">
-		<form action="#" method="post">
+		<form action="/auth/userProc" method="post">
 			<div class="form-group">
 				<label for="username">username : </label>
 				<input type="text" id="username" name="username" class="form-control" value="양이">
@@ -17,10 +17,10 @@
 				<label for="email">email : </label>
 				<input type="text" id="email" name="email" class="form-control" value="os01031@naver.com">
 			</div>
+			<button type="submit" id="btn--save" class="btn btn-primary">회원가입</button>
 		</form>
-			<button id="btn--save" class="btn btn-primary">회원가입</button>
 	</div>
 	
-<script src="/js/user.js"></script>
+<!-- <script src="/js/user.js"></script> -->
 	
 <%@ include file="../layout/footer.jsp" %>

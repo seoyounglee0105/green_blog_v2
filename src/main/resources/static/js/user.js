@@ -30,7 +30,7 @@ let index = {
 			if (res.status == "OK") {
 				alert("회원가입 성공");
 				// 화면 이동 - 로그인 페이지
-				location.href="/loginPage"
+				location.href="/loginPage";
 			}
 			
 			// 중복된 사용자 이름이라면
